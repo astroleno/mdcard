@@ -117,32 +117,6 @@ export default function Home() {
     }
   };
 
-  const getInitial = (name: string) => {
-    return name.charAt(0);
-  };
-
-  const updateGradientColor = (index: number, color: string) => {
-    const newColors = [...styleConfig.gradientColors];
-    newColors[index] = color;
-    setStyleConfig({ ...styleConfig, gradientColors: newColors });
-  };
-
-  const addGradientColor = () => {
-    if (styleConfig.gradientColors.length < 8) {
-      setStyleConfig({
-        ...styleConfig,
-        gradientColors: [...styleConfig.gradientColors, '#FFFFFF']
-      });
-    }
-  };
-
-  const removeGradientColor = (index: number) => {
-    if (styleConfig.gradientColors.length > 2) {
-      const newColors = styleConfig.gradientColors.filter((_, i) => i !== index);
-      setStyleConfig({ ...styleConfig, gradientColors: newColors });
-    }
-  };
-
   const gradientStyle = {
     background: `linear-gradient(${styleConfig.gradientAngle}deg, ${styleConfig.gradientColors.join(', ')})`
   };
