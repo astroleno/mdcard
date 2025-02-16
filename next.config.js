@@ -4,6 +4,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true
+  },
+  trailingSlash: true,
+  distDir: '.next',
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
   }
 };
 
